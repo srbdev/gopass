@@ -21,9 +21,7 @@ func generateToken(length int) []byte {
 	return token
 }
 
-func generateTokens(n int) []string {
-	tokenLength := 6
-
+func generateTokens(n int, tokenLength int) []string {
 	tokens := make([]string, n)
 	for i := range tokens {
 		tokens[i] = string(generateToken(tokenLength))
@@ -33,6 +31,6 @@ func generateTokens(n int) []string {
 }
 
 func main() {
-	tokens := generateTokens(3)
+	tokens := generateTokens(3, 6)
 	fmt.Printf("%s-%s-%s", tokens[0], tokens[1], tokens[2])
 }
